@@ -16,7 +16,7 @@
       首页
     </v-btn>
 
-    <v-btn text href="https://denglihong2007.github.io/CRSim-doc/" target="_blank" rel="noopener noreferrer"
+    <v-btn text href="https://docs.crsim.tech/" target="_blank" rel="noopener noreferrer"
       class="mx-1 nav-btn">
       <v-icon left class="mr-1">mdi-text-box</v-icon>
       文档
