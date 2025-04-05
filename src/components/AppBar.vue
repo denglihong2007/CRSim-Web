@@ -23,7 +23,7 @@
       <v-icon right small class="ml-1">mdi-open-in-new</v-icon>
     </v-btn>
 
-    <v-btn text href="http://47.122.74.193/CRSim/Key/" target="_blank" rel="noopener noreferrer"
+    <v-btn text href="https://docs.crsim.tech/app/key.html" target="_blank" rel="noopener noreferrer"
       class="mx-1 nav-btn">
       <v-icon left class="mr-1">mdi-key</v-icon>
       申请密钥
