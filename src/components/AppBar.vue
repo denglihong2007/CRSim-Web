@@ -16,8 +16,8 @@
       首页
     </v-btn>
 
-    <v-btn text href="https://你的github用户名.github.io/仓库名/" target="_blank" rel="noopener noreferrer"
-      class="mx-1 nav-btn" disabled>
+    <v-btn text href="https://denglihong2007.github.io/CRSim-doc/" target="_blank" rel="noopener noreferrer"
+      class="mx-1 nav-btn">
       <v-icon left class="mr-1">mdi-text-box</v-icon>
       文档
       <v-icon right small class="ml-1">mdi-open-in-new</v-icon>
