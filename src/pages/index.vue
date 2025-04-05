@@ -28,10 +28,13 @@
                 <img src="https://img.shields.io/github/stars/denglihong2007/CRSim" alt="Stars">
               </a>
               <a>
+                <img src="https://img.shields.io/github/v/tag/denglihong2007/CRSim?style=flat-square&label=Version" alt="最新版本">
+              </a>
+              <a>
                 <img src="https://img.shields.io/github/license/denglihong2007/CRSim?style=flat-square" alt="开源许可证">
               </a>
             </div>
-            <v-btn to="/setup.exe" color="blue-lighten-3" prepend-icon="mdi-download" size="large">立即下载</v-btn>
+            <v-btn @click="downloadFile" color="blue-lighten-3" prepend-icon="mdi-download" size="large">立即下载</v-btn>
               <v-btn href="https://github.com/denglihong2007/CRSim" class="ml-3" color="gray-lighten-3" target="_blank"
                 prepend-icon="mdi-github" size="large">GitHub 仓库</v-btn>
           </div>
@@ -77,7 +80,7 @@ export default {
         title: '功能特性 3',
         desc: '详细介绍第三个功能的优势和特点'
       }
-    ]
+    ],
   }),
   setup() {
     // 文字和颜色数组
@@ -113,7 +116,6 @@ export default {
       }, 50);
     };
 
-
     const dynamicLeave = (el) => {
       el.style.opacity = 1;
       el.style.transform = 'translateY(0)';
@@ -132,9 +134,15 @@ export default {
     };
   },
   methods: {
-    download() {
-      // 处理下载逻辑
-      alert('下载功能待实现')
+    downloadFile() {
+      const fileUrl = 'http://47.122.74.193/CRSim/setup.exe' // 替换为你的文件地址
+
+      const link = document.createElement('a')
+      link.href = fileUrl
+      link.download = '' // 可选：你可以设置文件名，如 'report.pdf'
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
     }
   }
 }
