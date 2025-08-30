@@ -34,9 +34,9 @@
                 <img src="https://img.shields.io/github/license/denglihong2007/CRSim?style=flat-square" alt="开源许可证">
               </a>
             </div>
-            <v-btn @click="downloadFile" color="blue-lighten-3" prepend-icon="mdi-download" size="large">立即下载</v-btn>
-              <v-btn href="https://github.com/denglihong2007/CRSim" class="ml-3" color="gray-lighten-3" target="_blank"
-                prepend-icon="mdi-github" size="large">GitHub 仓库</v-btn>
+            <v-btn href="https://github.com/denglihong2007/CRSim/releases" color="blue-lighten-3" prepend-icon="mdi-download" size="large">立即下载</v-btn>
+            <v-btn href="https://github.com/denglihong2007/CRSim" class="ml-3" color="gray-lighten-3" target="_blank"
+              prepend-icon="mdi-github" size="large">GitHub 仓库</v-btn>
           </div>
         </div>
       </div>
@@ -134,16 +134,6 @@ export default {
     };
   },
   methods: {
-    downloadFile() {
-      const fileUrl = 'http://47.122.74.193/CRSim/setup.exe' // 替换为你的文件地址
-
-      const link = document.createElement('a')
-      link.href = fileUrl
-      link.download = '' // 可选：你可以设置文件名，如 'report.pdf'
-      document.body.appendChild(link)
-      link.click()
-      document.body.removeChild(link)
-    }
   }
 }
 </script>
