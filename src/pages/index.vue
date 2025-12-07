@@ -34,9 +34,33 @@
                 <img src="https://img.shields.io/github/license/denglihong2007/CRSim?style=flat-square" alt="开源许可证">
               </a>
             </div>
-            <v-btn href="https://github.com/denglihong2007/CRSim/releases" color="blue-lighten-3" prepend-icon="mdi-download" size="large">立即下载</v-btn>
-            <v-btn href="https://github.com/denglihong2007/CRSim" class="ml-3" color="gray-lighten-3" target="_blank"
-              prepend-icon="mdi-github" size="large">GitHub 仓库</v-btn>
+            <div class="d-flex align-center">
+                
+                <a href="https://apps.microsoft.com/detail/9n4xhrrmph8v?referrer=appbadge&mode=direct" target="_blank" style="height: fit-content; line-height: 0;">
+                  <img src="https://get.microsoft.com/images/en-us%20dark.svg" width="200" style="vertical-align: middle;"/>
+                </a>
+                
+                <v-btn 
+                  href="https://github.com/denglihong2007/CRSim/releases" 
+                  color="blue-lighten-3" 
+                  prepend-icon="mdi-download" 
+                  size="large"
+                  class="ml-3" 
+                >
+                  立即下载
+                </v-btn>
+                
+                <v-btn 
+                  href="https://github.com/denglihong2007/CRSim" 
+                  class="ml-3" 
+                  color="gray-lighten-3" 
+                  target="_blank"
+                  prepend-icon="mdi-github" 
+                  size="large"
+                >
+                  GitHub 仓库
+                </v-btn>
+              </div>
           </div>
         </div>
       </div>
