@@ -33,7 +33,6 @@
 </template>
 
 <script setup lang="ts">
-import { red } from 'vuetify/util/colors';
 
   const items = [
     {

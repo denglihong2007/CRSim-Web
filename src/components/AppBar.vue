@@ -1,68 +1,93 @@
 <template>
-  <v-app-bar app elevate-on-scroll>
-    <div class="d-flex align-center ml-2">
-      <v-avatar size="48">
-        <v-img src="@/assets/logo.png" />
-      </v-avatar>
-      <v-toolbar-title class="text-h5 font-weight-bold ml-2">
-        CRSim
-      </v-toolbar-title>
-    </div>
-
-    <v-spacer />
-
-    <v-btn text to="/" active-class="active-link" class="mx-1 nav-btn">
-      <v-icon left class="mr-1">mdi-home</v-icon>
-      首页
-    </v-btn>
-
-    <v-btn text href="https://docs.crsim.tech/" target="_blank" rel="noopener noreferrer"
-      class="mx-1 nav-btn">
-      <v-icon left class="mr-1">mdi-text-box</v-icon>
-      文档
-      <v-icon right small class="ml-1">mdi-open-in-new</v-icon>
-    </v-btn>
-
-    <v-btn text href="https://docs.crsim.tech/app/key.html" target="_blank" rel="noopener noreferrer"
-      class="mx-1 nav-btn">
-      <v-icon left class="mr-1">mdi-key</v-icon>
-      申请密钥
-      <v-icon right small class="ml-1">mdi-open-in-new</v-icon>
-    </v-btn>
-  </v-app-bar>
+  <v-app-bar class="site-bar" flat height="72"><v-container class="bar-inner d-flex align-center" fluid><router-link
+        to="/" class="brand" aria-label="CRSim 首页"><v-avatar size="38"><v-img src="@/assets/logo.png"
+            alt="CRSim" /></v-avatar><span>CRSim</span></router-link><v-spacer />
+      <nav class="desktop-nav" aria-label="主导航"><v-btn to="/" variant="text" active-class="active-link"
+          prepend-icon="mdi-home-outline">首页</v-btn><v-btn href="https://docs.crsim.raillog.top/" target="_blank"
+          rel="noopener noreferrer" variant="text" append-icon="mdi-open-in-new">文档</v-btn><v-btn
+          href="https://docs.crsim.raillog.top/app/key.html" target="_blank" rel="noopener noreferrer" variant="text"
+          append-icon="mdi-open-in-new">申请密钥</v-btn></nav><v-btn class="mobile-menu" icon="mdi-menu" variant="text"
+        aria-label="打开菜单" @click="menuOpen = !menuOpen" />
+    </v-container></v-app-bar>
+  <v-expand-transition>
+    <div v-if="menuOpen" class="mobile-nav"><v-btn to="/" block variant="text">首页</v-btn><v-btn
+        href="https://docs.crsim.raillog.top/" target="_blank" block variant="text">文档</v-btn><v-btn
+        href="https://docs.crsim.raillog.top/app/key.html" target="_blank" block variant="text">申请密钥</v-btn></div>
+  </v-expand-transition>
 </template>
+<script setup lang="ts">
+import { ref } from 'vue'
 
-<style scoped>
-
-/* 按钮悬停动画 */
-.nav-btn {
-  transition: all 0.3s ease;
-  letter-spacing: 0.5px;
-  /* 增加字间距 */
-
-  &:hover {
-    transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.1);
-  }
-}
-
-/* 激活链接样式 */
-.active-link {
-  color: #FFD700 !important;
-  /* 使用金色高亮 */
-  font-weight: 600;
-  border-bottom: 2px solid currentColor;
-}
-
-/* 响应式调整 */
-@media (max-width: 600px) {
-  .v-toolbar__title {
-    font-size: 1.25rem !important;
+const menuOpen = ref(false)
+</script>
+<style
+  scoped>
+  .site-bar {
+    background: rgba(10, 16, 23, .9) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    backdrop-filter: blur(14px)
   }
 
-  .v-btn {
-    font-size: 0.875rem;
-    padding: 0 8px;
+  .bar-inner {
+    max-width: 1240px;
+    padding: 0 32px
   }
-}
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #f1f7f7;
+    text-decoration: none;
+    font-size: 1.18rem;
+    font-weight: 750;
+    letter-spacing: -.02em
+  }
+
+  .desktop-nav {
+    display: flex;
+    gap: 4px
+  }
+
+  .desktop-nav :deep(.v-btn) {
+    color: #aab8c6;
+    font-size: .9rem
+  }
+
+  .desktop-nav :deep(.v-btn:hover),
+  .active-link {
+    color: #65d7c8 !important
+  }
+
+  .mobile-menu,
+  .mobile-nav {
+    display: none
+  }
+
+  @media(max-width:650px) {
+    .bar-inner {
+      padding: 0 18px
+    }
+
+    .desktop-nav {
+      display: none
+    }
+
+    .mobile-menu {
+      display: inline-flex
+    }
+
+    .mobile-nav {
+      display: flex;
+      flex-direction: column;
+      padding: 8px 18px 14px;
+      background: #0a1017;
+      border-bottom: 1px solid rgba(255, 255, 255, .08)
+    }
+
+    .mobile-nav :deep(.v-btn) {
+      justify-content: flex-start;
+      color: #aab8c6
+    }
+  }
 </style>
